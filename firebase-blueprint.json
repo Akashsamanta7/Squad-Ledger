@@ -1,0 +1,38 @@
+{
+  "entities": {
+    "SquadState": {
+      "title": "SquadState",
+      "description": "Complete accounting dataset for a specific squad",
+      "type": "object",
+      "properties": {
+        "players": {
+          "type": "array",
+          "description": "List of players in the squad"
+        },
+        "tournaments": {
+          "type": "array",
+          "description": "Tournaments logged for the squad"
+        },
+        "payments": {
+          "type": "array",
+          "description": "Settlement payments made between squad members"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of the last edit"
+        }
+      },
+      "required": [
+        "players",
+        "tournaments",
+        "payments"
+      ]
+    }
+  },
+  "firestore": {
+    "/squads/{username}": {
+      "schema": "SquadState",
+      "description": "Firestore document storing a single squad's entire state, partitioned securely by username"
+    }
+  }
+}

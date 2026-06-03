@@ -1,0 +1,34 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Catch-all safety net: default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // ID validation guard
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 64 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // Strict schema and size guard for the squads document
+    function isValidSquadState(data) {
+      return data.keys().hasAll(['players', 'tournaments', 'payments'])
+        && data.keys().size() <= 5
+        && data.players is list
+        && data.players.size() <= 20
+        && data.tournaments is list
+        && data.tournaments.size() <= 2000
+        && data.payments is list
+        && data.payments.size() <= 2000;
+    }
+
+    // Main squad document configuration
+    match /squads/{username} {
+      allow get: if isValidId(username);
+      allow create, update: if isValidId(username) && isValidSquadState(request.resource.data);
+      allow delete: if false; // Hardened: do not allow clients to delete squad history
+    }
+  }
+}

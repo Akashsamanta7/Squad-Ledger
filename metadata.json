@@ -1,0 +1,8 @@
+{
+  "name": "Esports Tournament Entry and Winning Tracker",
+  "description": "A Progressive Web App designed to track entry charges and winnings for a 4-player Esports squad with automated end-of-month net calculations and audit-ready settlement reports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
