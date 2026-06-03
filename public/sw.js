@@ -1,9 +1,9 @@
 const CACHE_NAME = 'squad-settle-v1';
 const ASSETS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/logo.png'
+  './',
+  'index.html',
+  'manifest.json',
+  'logo.png'
 ];
 
 // Install Event
