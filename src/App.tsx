@@ -431,7 +431,7 @@ export default function App() {
             <div className="relative">
               <div className="absolute inset-0 bg-cyan-500 rounded-2xl blur opacity-25 animate-pulse"></div>
               <img 
-                src="/logo.png" 
+                src="./logo.png" 
                 alt="Squad Settle Icon" 
                 className="w-14 h-14 object-cover rounded-2xl border border-cyan-500/40 relative shadow-2xl"
                 referrerPolicy="no-referrer"
