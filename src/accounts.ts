@@ -7,18 +7,18 @@ export interface SquadAccount {
 // Add, edit, or configure additional squads and credentials right here!
 export const HARDCODED_ACCOUNTS: SquadAccount[] = [
   {
-    username: "akash",
-    password: "123",
+    username: "squad1",
+    password: "1230X",
     squadName: "Akash's Squad"
   },
   {
-    username: "squad1",
-    password: "456",
+    username: "squad2",
+    password: "4560X",
     squadName: "Elite Free Fire Squad"
   },
   {
-    username: "squad2",
-    password: "789",
+    username: "squad3",
+    password: "7890X",
     squadName: "Delta Esports Squad"
   }
 ];
